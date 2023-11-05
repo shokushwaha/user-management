@@ -12,6 +12,38 @@ The base URL for all endpoints is `https://localhost`.
 
 API endpoints require authentication. Use a valid access token in the `Authorization` header.
 
+
+
+## Setting up Firebase
+
+To use Firebase Authentication and Firestore in this API, follow these steps:
+
+1. **Create a Firebase Project:**
+   - Go to the [Firebase Console](https://console.firebase.google.com/) and create a new project.
+
+2. **Set Up Firebase Admin SDK:**
+   - In your FastAPI project directory, install Firebase Admin SDK:
+     ```bash
+     pip install firebase-admin
+     ```
+
+3. **Get Service Account Key:**
+   - Go to Project Settings > Service accounts in your Firebase project's settings.
+   - Under "Firebase Admin SDK," click "Generate New Private Key" to download a JSON file.
+
+4. **Initialize Firebase Admin SDK:**
+   - Use the downloaded service account key in your FastAPI application to initialize the Firebase Admin SDK:
+     ```python
+     import firebase_admin
+     from firebase_admin import credentials
+
+     cred = credentials.Certificate("path/to/your-firebase-project-key.json")
+     firebase_admin.initialize_app(cred)
+     ```
+
+5. **Use Firebase Services:**
+   - Utilize Firebase Authentication and Firestore methods in your FastAPI endpoints for user management.
+
 ## Endpoints
 
 ### Register User

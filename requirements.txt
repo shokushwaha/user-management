@@ -1,0 +1,6 @@
+fastapi
+pydantic
+firebase_admin
+fastapi_limiter
+https
+pytest
