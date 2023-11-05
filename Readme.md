@@ -25,3 +25,20 @@ API endpoints require authentication. Use a valid access token in the `Authoriza
     "email": "string",
     "full_name": "string"
   }
+
+### Login User
+
+- **Endpoint:** `POST /users/login`
+- **Description:** Allows users to log in using email and password..
+- **Request:**
+  ```json
+  {
+  "email": "string",
+  "password": "string"
+  }
+- **Response:**
+ ```json
+  {
+  "user_id": "string"
+  }
+
